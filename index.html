@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Abadi Kayu - Spesialis Wood Flooring & Decking</title>
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================
+           PENGATURAN WARNA & BAGIAN UTAMA (EDIT DI SINI)
+           ========================================== */
+        :root {
+            --warna-utama: #2c1a0e;       /* Warna cokelat kayu gelap */
+            --warna-aksen: #c88a4b;       /* Warna kayu emas/muda */
+            --warna-latar: #f9f6f0;       /* Warna krem lembut */
+            --warna-teks: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--warna-latar);
+            color: var(--warna-teks);
+            line-height: 1.6;
+        }
+
+        /* HEADER / NAVBAR */
+        header {
+            background-color: var(--warna-utama);
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--warna-aksen);
+        }
+
+        /* HERO SECTION (BANNER UTAMA) */
+        .hero {
+            /* CARA GANTI BACKGROUND HERO: Ubah URL gambar di dalam url('...') */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .btn-wa {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-wa:hover {
+            background-color: #1eb954;
+            transform: translateY(-2px);
+        }
+
+        /* SECTION / BAGIAN UMUM */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--warna-utama);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 3px;
+            background: var(--warna-aksen);
+            position: absolute;
+            bottom: -5px;
+            left: 25%;
+        }
+
+        /* GRID KATALOG PRODUK */
+        .grid-katalog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card-produk {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-produk:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-produk img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--warna-utama);
+        }
+
+        .card-body .harga {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--warna-aksen);
+            margin-bottom: 12px;
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* JASA/LAYANAN */
+        .grid-layanan {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .card-layanan {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .card-layanan i {
+            font-size: 2.5rem;
+            color: var(--warna-aksen);
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--warna-utama);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* TOMBOL WA MELAYANG DI KANAN BAWAH */
+        .wa-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="logo">JAYA ABADI KAYU
+          
+        </div>
+    </header>
+
+    <!-- HERO / BANNER UTAMA -->
+    <section class="hero">
+        <h1>Kayu Flooring & Decking Berkualitas</h1>
+        <p>Menyediakan kayu Bengkirai, Ulin, Merbau, dan jasa pemasangan profesional untuk lantai, decking, plafon, serta dinding.</p>
+        <!-- EDIT NOMOR HP DI BAWAH (Ganti 6289510005553) -->
+        <a href="https://wa.me/6289601740009?text=Halo%20Jaya%20Abadi%20Kayu,%20saya%20ingin%20konsultasi%20mengenai%20produk/jasa%20pemasangan." class="btn-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> Konsultasi Gratis Sekarang
+        </a>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Katalog Produk</h2>
+        </div>
+
+        <div class="grid-katalog">
+
+            <!-- PRODUK 1 -->
+            <div class="card-produk">
+                <!-- Ganti src="..." dengan URL/link gambar Anda -->
+                <img src="Bengkirai.jpg" alt="Decking Bengkirai">
+                <div class="card-body">
+                    <h3>Decking Kayu Bengkirai</h3>
+                    <div class="harga">Rp 500.000 / m²</div>
+                    <p>Sangat kuat, tahan cuaca ekstrem, cocok untuk outdoor, kolam renang, dan taman.</p>
+                    <a href="https://wa.me/6289601740009?text=Halo,%20saya%20tertarik%20dengan%20Decking%20Kayu%20Bengkirai" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pesan via WA
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUK 2 -->
+            <div class="card-produk">
+                <img src="Ulin.jpg" alt="Decking Ulin">
+                <div class="card-body">
+                    <h3>Decking Kayu Ulin</h3>
+                    <div class="harga">Rp 750.000 / m²</div>
+                    <p>Kayu besi kokoh tahan air laut dan cuaca. Terbaik untuk area outdoor & dermaga.</p>
+                    <a href="https://wa.me/6289601740009?text=Halo,%20saya%20tertarik%20dengan%20Decking%20Kayu%20Ulin" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pesan via WA
+                    </a>
+                </div>
+            </div>
+
+            <!-- PRODUK 3 -->
+            <div class="card-produk">
+                <img src="Merbau.jpg" alt="Flooring Merbau">
+                <div class="card-body">
+                    <h3>Flooring Kayu Merbau</h3>
+                    <div class="harga">Rp 420.000 / m²</div>
+                    <p>Serat elegan berwarna cokelat kemerahan, cocok untuk lantai interior mewah.</p>
+                    <a href="https://wa.me/6289601740009?text=Halo,%20saya%20tertarik%20dengan%20Flooring%20Kayu%20Merbau" class="btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Pesan via WA
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JASA & LAYANAN -->
+    <section class="container">
+        <div class="section-title">
+            <h2>Jasa & Layanan Pemasangan</h2>
+        </div>
+
+        <div class="grid-layanan">
+            <div class="card-layanan">
+                <i class="fas fa-border-all"></i>
+                <h3>Pemasangan Lantai</h3>
+                <p>Pemasangan presisi untuk indoor menggunakan flooring berkualitas.</p>
+            </div>
+            <div class="card-layanan">
+                <i class="fas fa-tree"></i>
+                <h3>Pemasangan Decking</h3>
+                <p>Pemasangan kayu outdoor untuk taman, balkon, dan pinggir kolam.</p>
+            </div>
+            <div class="card-layanan">
+                <i class="fas fa-align-justify"></i>
+                <h3>Plafon & Dinding</h3>
+                <p>Ornamen dinding (cladding) dan ceiling kayu untuk estetika ruangan.</p>
+            </div>
+            <div class="card-layanan">
+                <i class="fas fa-paint-roller"></i>
+                <h3>Finish & Maintenance</h3>
+                <p>Layanan amplas ulang, recoating, dan perawatan kayu berkala.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Jaya Abadi Kayu. All Rights Reserved.</p>
+    </footer>
+
+    <!-- TOMBOL WA MELAYANG -->
+    <a href="https://wa.me/6289601740009?text=Halo%20Jaya%20Abadi%20Kayu,%20saya%20ingin%20bertanya%20produk%20dan%20layanan." class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
